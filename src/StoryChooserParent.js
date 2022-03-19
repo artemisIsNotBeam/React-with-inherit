@@ -32,7 +32,15 @@ const example = {
 class ParentStory extends React.Component {
     constructor(props){
         super(props);
-        this.state = { Index:1, story:example}
+        this.state = { 
+          Index:1, 
+          story:example, 
+          message:"this run first",
+          
+        }
+
+        this.IncrementIndex = this.IncrementIndex.bind(this);
+        this.restart = this.restart.bind(this);
     }
 
     IncrementIndex(option, List){
@@ -44,21 +52,25 @@ class ParentStory extends React.Component {
         this.setState({ Index: newPlace});
       }
       */
+      this.setState({ message: option }, () => {
+        console.log(this.state.message);
+      }); 
 
-      console.log("I've been run");
+      //reference this thing to fix printing weird thing fist before message
     }
 
     restart(){
       //this.setState( {Index:1} );
-      console.log("I was run from child class")
+      this.setState({message:"restart"})
+      console.log(this.state.message);
     }
 
     render(){
         return (
         <div>
-            <h3> I'm a cool nice parent class</h3>
             <h1>Welcome to my choose your own adventure using react</h1>
-            <Buttan update={this.IncrementIndex} restart={this.restart} daStory={this.state.story} Index={this.state.Index}/>
+            <Buttan update={this.IncrementIndex} restart={this.restart} daStory={this.state.story} Index={this.state.Index} 
+            message={this.state.message} prompt={} option={} option2={}/>
         </div>
         )
     }

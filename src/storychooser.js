@@ -23,10 +23,10 @@ class Buttan extends React.Component {
           <button id="button1" onClick={() =>{this.upDate(1,this.props.Index)} }> {this.props.daStory[this.props.Index]["option1"]}</button>
           <button id="button2" onClick={() =>{this.upDate(2,this.props.Index)} }> {this.props.daStory[this.props.Index]["option2"]}</button>
           <button id="third" onClick={()=>{this.restart()}}>Restart</button>
+          <p>{this.props.message}</p>
       </div>
     )
   }
-  //I'm a nice file thingy 
 }
 
 export default Buttan;
