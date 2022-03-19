@@ -24,16 +24,17 @@ class ParentStory extends React.Component {
     }
 
     IncrementIndex(option){
-      for( let i=0;i<option;i++){
-        console.log(option[i]);
-      }
+      this.setState({
+        prompt:option[2],
+        userName:option[1]
+      })
     }
     render(){
         return (
         <div>
             <h1>Password</h1>
             <Buttan update={this.IncrementIndex} daStory={this.state.story} Index={this.state.Index} 
-            message={this.state.message} prompt={this.state.userName} password={this.state.prompt}option={this.state.option} option2={this.state.option2}/>
+            prompt={this.state.userName} password={this.state.prompt}option={this.state.option} option2={this.state.option2}/>
         </div>
         )
     }

@@ -19,7 +19,6 @@ class Buttan extends React.Component {
           <p id="password">{this.props.password}</p>
           <button id="button1" onClick={() =>{this.upDate(this.props.daStory.repl)} }> {this.props.option}</button>
           <button id="button2" onClick={() =>{this.upDate(this.props.daStory.github)} }> {this.props.option2}</button>
-          <p>{this.props.message}</p>
       </div>
     )
   }
