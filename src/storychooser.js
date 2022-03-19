@@ -8,21 +8,17 @@ class Buttan extends React.Component {
     this.upDate= this.upDate.bind(this);
   }
 
-  upDate(option,Index){
-    this.props.update(option, Index);
+  upDate(option){
+    this.props.update(option);
   }
-
-  restart(){
-    this.props.restart();
-  }
-
+  
   render() {
     return (
       <div>
-          <p id="prompt">{this.props.daStory[this.props.Index]["prompt"]}</p>
-          <button id="button1" onClick={() =>{this.upDate(1,this.props.Index)} }> {this.props.daStory[this.props.Index]["option1"]}</button>
-          <button id="button2" onClick={() =>{this.upDate(2,this.props.Index)} }> {this.props.daStory[this.props.Index]["option2"]}</button>
-          <button id="third" onClick={()=>{this.restart()}}>Restart</button>
+          <p id="username">{this.props.prompt}</p>
+          <p id="password">{this.props.password}</p>
+          <button id="button1" onClick={() =>{this.upDate(this.props.daStory.repl)} }> {this.props.option}</button>
+          <button id="button2" onClick={() =>{this.upDate(this.props.daStory.github)} }> {this.props.option2}</button>
           <p>{this.props.message}</p>
       </div>
     )
