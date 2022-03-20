@@ -7,7 +7,7 @@ class Buttan extends React.Component {
     super(props);
     this.upDate= this.upDate.bind(this);
   }
-
+  //run  the props to keep <button> tags length down
   upDate(option){
     this.props.update(option);
   }
@@ -15,10 +15,12 @@ class Buttan extends React.Component {
   render() {
     return (
       <div>
-          <p id="username">{this.props.prompt}</p>
+          {/* top two are username and password */}
+          <p id="username">{this.props.userName}</p>
           <p id="password">{this.props.password}</p>
-          <button id="button1" onClick={() =>{this.upDate(this.props.daStory.repl)} }> {this.props.option}</button>
-          <button id="button2" onClick={() =>{this.upDate(this.props.daStory.github)} }> {this.props.option2}</button>
+          {/* () => to make sure it only runs when clicked otherwise it runs when website */}
+          <button id="button1" onClick={() =>{this.upDate(this.props.PasswordList.repl)} }> {this.props.option}</button>
+          <button id="button2" onClick={() =>{this.upDate(this.props.PasswordList.github)} }> {this.props.option2}</button>
       </div>
     )
   }
